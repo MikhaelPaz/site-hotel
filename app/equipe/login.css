@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Instrument+Sans:wght@400;500;600&display=swap");
+
+.lg-page {
+  --petroleo: #0e3b43;
+  --petroleo-2: #0a2a30;
+  --latao: #b8923f;
+  --latao-claro: #e4c980;
+  --fundo: #f3f6f4;
+  --texto: #14262a;
+  --suave: #5b6e70;
+  --borda: #c9d5d2;
+  --erro: #b3261e;
+  display: grid;
+  grid-template-columns: minmax(280px, 42%) 1fr;
+  min-height: 100vh;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+.lg-page * {
+  box-sizing: border-box;
+}
+
+.lg-side {
+  background: var(--petroleo-2);
+  color: #eaf1ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 48px 24px;
+}
+.lg-plate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 28px 44px;
+  border: 2px solid var(--latao);
+  outline: 1px solid var(--latao);
+  outline-offset: 6px;
+  border-radius: 6px;
+  background: linear-gradient(160deg, #c9a24d, #9a7a2e);
+  color: #1c1503;
+}
+.lg-plate-small {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.lg-plate-big {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1;
+}
+.lg-side-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  margin: 0;
+  color: var(--latao-claro);
+}
+
+.lg-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+.lg-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.lg-form h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--petroleo);
+}
+.lg-lead {
+  margin: 0 0 28px;
+  color: var(--suave);
+  line-height: 1.5;
+}
+
+.lg-form label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.lg-form input[type="email"],
+.lg-form input[type="password"],
+.lg-form input[type="text"] {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+.lg-form input[aria-invalid="true"] {
+  border-color: var(--erro);
+}
+.lg-page :focus-visible {
+  outline: 3px solid var(--latao);
+  outline-offset: 2px;
+}
+
+.lg-senha {
+  position: relative;
+}
+.lg-senha input {
+  padding-right: 84px;
+}
+.lg-toggle {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  height: 34px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--petroleo);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.lg-toggle:hover {
+  background: #e5edea;
+}
+
+.lg-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.lg-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+.lg-row a {
+  color: var(--petroleo);
+}
+
+.lg-erro {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--erro);
+  background: #fbeae9;
+  border-left: 3px solid var(--erro);
+  border-radius: 4px;
+}
+
+.lg-enviar {
+  height: 48px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--petroleo);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.lg-enviar:hover:not(:disabled) {
+  background: var(--petroleo-2);
+}
+.lg-enviar:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.lg-ajuda {
+  margin: 20px 0 0;
+  font-size: 13px;
+  color: var(--suave);
+  text-align: center;
+}
+
+.lg-voltar {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.lg-voltar:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 760px) {
+  .lg-page {
+    grid-template-columns: 1fr;
+  }
+  .lg-side {
+    padding: 28px 20px;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .lg-plate {
+    padding: 12px 20px;
+    outline: none;
+  }
+  .lg-plate-big {
+    font-size: 30px;
+  }
+  .lg-side-name {
+    font-size: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
